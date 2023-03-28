@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "ml"
+		}
+	],
+	"settings": {
+		"python.linting.pylintEnabled": true,
+		"python.linting.enabled": true,
+		"python.defaultInterpreterPath": "python.exe"
+	}
+}
