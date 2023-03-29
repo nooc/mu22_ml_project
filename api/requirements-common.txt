@@ -1,0 +1,6 @@
+# Common requirements used across local dev and production
+fastapi==0.95.0
+gunicorn==20.1.0
+uvicorn==0.21.1
+google-cloud-storage
+pydantic

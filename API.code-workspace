@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "api"
+		}
+	],
+	"settings": {
+		"python.linting.pylintEnabled": true,
+		"python.linting.enabled": true,
+		"python.defaultInterpreterPath": ".venv/Scripts/python.exe"
+	}
+}
