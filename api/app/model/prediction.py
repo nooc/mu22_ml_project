@@ -18,3 +18,4 @@ class PredictionResponse(BaseModel):
     """
     absolute:float
     change:float
+    message:str

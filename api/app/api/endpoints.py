@@ -1,11 +1,11 @@
 from typing import Any
 
 from fastapi import APIRouter, Depends
+from fastapi.responses import PlainTextResponse
 from starlette.responses import RedirectResponse
 
-from app.service.prediction_service import (PredictionRequest,
-                                            PredictionResponse,
-                                            PredictionService)
+from app.service import (PredictionRequest, PredictionResponse,
+                         PredictionService)
 
 from .dependencies import predictor_dep
 
@@ -18,6 +18,10 @@ def redirect_to_docs():
     """Redirect to API docs when at site root"""
     return RedirectResponse('/api-doc')
 
+@api_routes.get('/_ah/warmup', include_in_schema=False, response_class=PlainTextResponse)
+def warmup():
+    """Appengine warmup request"""
+    return "OK"
 
 @api_routes.post(
     '/predict',

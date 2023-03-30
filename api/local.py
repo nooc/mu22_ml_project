@@ -4,7 +4,9 @@ from os import environ, system
 
 EXE_STR = r'uvicorn --reload --host localhost --port 8080 app.main:application'
 ENV = {
-    'CRED_JSON':'micro-services-378415-83c3c6430e0a.json'
+    'CREDENTIALS_JSON':'micro-services-378415-83c3c6430e0a.json',
+    'GOOGLE_CLOUD_PROJECT':'micro-services-378415',
+    'LOCAL_RUN':'true'
 }
 
 def run():

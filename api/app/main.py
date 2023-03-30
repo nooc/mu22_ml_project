@@ -5,15 +5,15 @@ from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
 from app.api.endpoints import api_routes
-
+from .config import settings
 
 def create_app():
     '''Initialize FastAPI app'''
     app = FastAPI(
-        title = 'Stock movement prediction service',
-        description = 'Predict stock movement by finantial news.',
-        openapi_url = '/api-spec/openapi.json',
-        docs_url = '/api-doc',
+        title = settings.TITLE,
+        description = settings.DESCRIPTION,
+        openapi_url = settings.OPENAPI_URL,
+        docs_url = settings.DOCS_URL,
         redoc_url = None)
 
     # Enable CORS via middleware

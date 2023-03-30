@@ -1,4 +1,4 @@
-from app.service.prediction_service import PredictionService
+from app.service import predictor, PredictionService
 
 def predictor_dep() -> PredictionService:
-    return PredictionService()
+    return predictor
