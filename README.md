@@ -56,4 +56,4 @@ The servcie uses FastAPI and is deployed on Google App Engine Python environment
 
 This service is deployed at (with Swagger docs):
 
-https://predictor.micro-services-378415.appspot.com
+https://predictor-dot-micro-services-378415.appspot.com
