@@ -1,4 +1,2 @@
-# Requirements for local development
--r requirements-common.txt
-pytest
+-r requirements.txt
 pylint

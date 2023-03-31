@@ -1,2 +1,7 @@
-# Production requirements for Google App Engine
--r requirements-common.txt
+fastapi==0.95.0
+gunicorn==20.1.0
+uvicorn==0.21.1
+google-cloud-storage==2.7.0
+pydantic==1.10.7
+scikit-learn==1.2.2
+torch==2.0.0
