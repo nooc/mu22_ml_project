@@ -7,8 +7,8 @@ class PredictionRequest(BaseModel):
     Args:
         BaseModel (_type_): _description_
     """
-    daily_news:list[str]
-    daily_stock:list[float]
+    news:list[str]
+    stock:list[float]
 
 class PredictionResponse(BaseModel):
     """Prediction response
@@ -16,6 +16,5 @@ class PredictionResponse(BaseModel):
     Args:
         BaseModel (_type_): _description_
     """
-    absolute:float
-    change:float
+    value:float
     message:str

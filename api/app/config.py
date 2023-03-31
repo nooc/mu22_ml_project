@@ -1,6 +1,7 @@
-from typing import List, Optional
+from typing import Optional
 
-from pydantic import AnyHttpUrl, BaseSettings, EmailStr
+from pydantic import BaseSettings
+
 
 class Settings(BaseSettings):
     TITLE = 'Stock movement prediction service'
