@@ -87,7 +87,12 @@ class PredictionService:
             PredictionResponse: Prediction
         """
         if self.is_ok:
-            value = self.prediction_model(self.get_data(req.news,req.stock))
+            data = self.get_data(req.news,req.stock)
+            value = self.prediction_model(data)
+            if settings.LOCAL_RUN:
+                print('=== Prediction ===')
+                print('  Data:', data)
+                print('Result:', value)
             return PredictionResponse(value=value, message='Ok')
         else:
             return PredictionResponse(value=0, message='Not initialized')
@@ -104,9 +109,12 @@ class PredictionService:
         """
         X_data = np.zeros(self.DATA_LENGTH*2, dtype=np.float32)
         for i in range(self.DATA_LENGTH):
-            X_data[i] = stock[i]
+            if i == 0:
+                base = stock[i]
+                X_data[i] = 1.0
+            else:
+                X_data[i] = stock[i] / base
             X_data[i + self.DATA_LENGTH] = self.get_sentiment(news[i])
-        
         result = tensor(X_data, dtype=torch.float32)
         return result
     
