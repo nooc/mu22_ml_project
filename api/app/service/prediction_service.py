@@ -20,9 +20,9 @@ class PredictorNN(nn.Module):
     def __init__(self) -> None:
         super().__init__()
         self.fc = nn.Sequential(
-            nn.Linear(self.INPUT, self.INPUT*8),
+            nn.Linear(self.INPUT, self.INPUT*10),
             nn.ReLU(),
-            nn.Linear(self.INPUT*8, self.INPUT*4),
+            nn.Linear(self.INPUT*10, self.INPUT*4),
             nn.ReLU(),
             nn.Linear(self.INPUT*4, 1),
             nn.ReLU()
@@ -39,6 +39,7 @@ class PredictorNN(nn.Module):
         except:
             return False
 
+
 class PredictionService:
     """PredictionService
     """
@@ -47,7 +48,7 @@ class PredictionService:
     sentiment_name = 'LogisticRegression'
     predictor_name = 'PredictorNN'
     sentiment_model = None
-    prediction_model = None
+    prediction_model:nn.Module = None
     features = None
     is_ok = False
 
