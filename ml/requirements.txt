@@ -1,0 +1,8 @@
+scikit-learn
+scikit-learn-intelex
+torch
+numpy
+matplotlib
+pandas
+setuptools
+spacy[cuda-autodetect]
